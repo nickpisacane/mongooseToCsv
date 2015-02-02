@@ -16,7 +16,7 @@ giving you the ability to transform and order them as you wish.
 	var mongooseToCsv = require('mongoose-to-csv');
 	mongooseToCsv(/* options */)
 	// OR
-	var mongooseToCsv = new require('mongoose-to-csv').MongooseToCsv(/* options */);
+	var mongooseToCsv = new mongooseToCsv.MongooseToCsv(/* options */);
 ```
 ## Methods
 * <h3> MongooseToCsv#model(model)</h3>
