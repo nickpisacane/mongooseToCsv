@@ -40,7 +40,7 @@ giving you the ability to transform and order them as you wish.
 		}
 	```
 	If function, then it should be a one to all transformative function, that takes a single property as an argument.
-* <h3>MongooseToCsv#run(next) 
+* <h3>MongooseToCsv#run(next) </h3>
 	* next Function (err, data)
 * <h3>MongooseToCsv#save()</h3>
 	* returns writeable stream
