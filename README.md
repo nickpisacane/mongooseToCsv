@@ -57,7 +57,7 @@ giving you the ability to transform and order them as you wish.
 			})
 			.run()
 			.on('finish', function () {
-				// export to csv is ready
+				// export.csv is ready
 			});
 	});
 ```
