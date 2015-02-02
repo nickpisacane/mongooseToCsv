@@ -6,30 +6,30 @@ giving you the ability to transform and order them as you wish.
 	$ npm install mongoose-to-csv
 ```
 ## MongooseToCsv([options]) 
-	* model Mongoose Model, See model method
-	* filename String, See filename method
-	* exclude String, See exclude method
-	* data Array, See data method
-	* order String, See order method
+* model Mongoose Model, See model method
+* filename String, See filename method
+* exclude String, See exclude method
+* data Array, See data method
+* order String, See order method
 
-	```js
-		var mongooseToCsv = require('mongoose-to-csv');
-		mongooseToCsv(/* options */)
-		// OR
-		var mongooseToCsv = new require('mongoose-to-csv').MongooseToCsv(/* options */);
-	```
+```js
+	var mongooseToCsv = require('mongoose-to-csv');
+	mongooseToCsv(/* options */)
+	// OR
+	var mongooseToCsv = new require('mongoose-to-csv').MongooseToCsv(/* options */);
+```
 ## Methods
 * <h3> MongooseToCsv#model(model)</h3>
 	* model Mongoose Model
 * <h3>MongooseToCsv#data(data)</h3>
 	* data Array Mongoose query
-* <h3>MongooseToCsv#filename(filename)
+* <h3>MongooseToCsv#filename(filename) </h3>
 	* filename String Csv filename
-* <h3>MongooseToCsv#order(order)
+* <h3>MongooseToCsv#order(order)</h3>
 	* order String Space separated list of properties of the schema, this will be the order for the headers of the csv files
-* <h3>MongooseToCsv#exclude(excludes)
+* <h3>MongooseToCsv#exclude(excludes)</h3>
 	* excludes String Space separated list of properties to eclude from the csv file.
-* <h3>MongooseToCsv#use(transformer)
+* <h3>MongooseToCsv#use(transformer)</h3>
 	* transformer Object|Function
 	If the `transformer` is an Object, it should be a one to one correspondence
 	Example
