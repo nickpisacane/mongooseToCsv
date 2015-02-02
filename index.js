@@ -103,23 +103,23 @@ MongooseToCsv.prototype.use = function (transformer) {
  * Create the csv stream
  *
  * @param {Object|Function} [options = {}] Any valid options for `fs.createWriteStream`
- *
+ * @api public
  * @return {Stream}
  * ###Ex
  * mongooseToCsv()
  * 		.filename('my.csv')
  * 		.model(MyModel)
  * 		.data(myQuery)
- *    .run()
+ *    .save()
  * 		.on('finish', function() {
  *			// done
  *    })
  */
 
-MongooseToCsv.prototype.run = function (options) {
+MongooseToCsv.prototype.save = function (options) {
 	options = (options || {});
 	if (!this._filename || !this._data || !this._model) {
-		throw new Error('Must have model, filename and data to run');
+		throw new Error('Must have model, filename and data to save');
 	}
 
 	if (!_.isString(this._filename)) throw new TypeError('Filename must be of String type');
@@ -138,6 +138,36 @@ MongooseToCsv.prototype.run = function (options) {
 };
 
 /**
+ * Just Data, in csv format. Async callback.
+ *
+ * @param {Function} next callback(err, data)
+ * 
+ */
+
+MongooseToCsv.prototype.run = function (next) {
+	var headersMap = this._createHeaders()
+	  , headers = headersMap.map(function (obj){return obj.header;}).join(', ')
+	  , self = this;
+
+	if (!self._data || !self._model) {
+		throw new Error('Must have model, and data to run');
+	}
+
+	return process.nextTick(function () {
+		var data = [];
+		try {
+			data.push(headers);
+			self._data.forEach(function (obj) {
+				data.push(objToRow(headersMap, obj));
+			});
+			return next(null, data.join('\n'));
+		} catch (e) {
+			return next(e);
+		}
+	});
+};
+
+/**
  * Create the headers Obj
  *
  * @api private
@@ -145,6 +175,7 @@ MongooseToCsv.prototype.run = function (options) {
  * @format { actual, header }
  * 	 where actual is the mongoose schema property,
  *	 and header is the csv header that values of the `actual` property will correspond to.
+ * @api private
  */
 
 MongooseToCsv.prototype._createHeaders = function () {

@@ -1,6 +1,6 @@
 {
 	"name": "mongoose-to-csv",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"author": "Nick Pisacane <pisacanen@gmail.com> (http://nickpisacane.com)",
 	"description": "Export mongoose querys to csv.",
 	"keywords": ["csv", "mongoose", "mongo", "mongo to csv", "mongoose to csv"],

@@ -40,9 +40,12 @@ giving you the ability to transform and order them as you wish.
 		}
 	```
 	If function, then it should be a one to all transformative function, that takes a single property as an argument.
-* <h3>MongooseToCsv#run()
-	* returns a WritableStream
-## Example
+* <h3>MongooseToCsv#run(next) 
+	* next Function (err, data)
+* <h3>MongooseToCsv#save()</h3>
+	* returns writeable stream
+
+## Example Saving
 ```js
 
 	MyModel.find({}, function (err, doc) {
@@ -55,9 +58,28 @@ giving you the ability to transform and order them as you wish.
 			.use(function (prop) {
 				return (prop.slice(0, 1).toUpperCase() + prop.slice(1))
 			})
-			.run()
+			.save()
 			.on('finish', function () {
 				// export.csv is ready
 			});
+	});
+```
+
+## Example Running
+```js
+
+	MyModel.find({}, function (err, doc) {
+		// handler err
+		mongooseToCsv()
+			.filename('export.csv')
+			.model(MyModel)
+			.exclude('_id')
+			.order('name email phone street')
+			.use(function (prop) {
+				return (prop.slice(0, 1).toUpperCase() + prop.slice(1))
+			})
+			.run(function (err, data) {
+				// data is ready
+			})
 	});
 ```
