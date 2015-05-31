@@ -18,13 +18,14 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./test/test.js"
+    "test": "mocha ./test/mongooseToCsv.spec.js"
   },
   "dependencies": {
     "csv-builder": "0.0.2"
   },
   "devDependencies": {
     "should": "~6.0.1",
-    "mongoose": "~4.0.2"
+    "mongoose": "~4.0.2",
+    "testable-stream": "0.0.1"
   }
 }
