@@ -55,6 +55,12 @@ User.find({})
 $ npm install mongoose-to-csv
 ```
 
+## Testing
+Running tests requires a local mongodb server, and mocha. While most likely not a namespace issue, the test script will create a database `__mongoose_to_csv_test__`, and drop the database when finished. You have been warned.
+```sh
+$ npm test 
+```
+
 ## API
 
 #### Schema.plugin(mongooseToCsv, options)
