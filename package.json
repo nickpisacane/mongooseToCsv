@@ -1,6 +1,6 @@
 {
   "name": "mongoose-to-csv",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Nick Pisacane <pisacanen@gmail.com> (http://nickpisacane.com)",
   "description": "Export mongoose querys as csv streams.",
   "keywords": [
@@ -21,11 +21,12 @@
     "test": "mocha ./test/mongooseToCsv.spec.js"
   },
   "dependencies": {
-    "csv-builder": "0.0.2"
+    "csv-builder": "0.0.4"
   },
   "devDependencies": {
-    "should": "~6.0.1",
+    "mocha": "^3.2.0",
     "mongoose": "~4.0.2",
+    "should": "~6.0.1",
     "testable-stream": "0.0.1"
   }
 }
