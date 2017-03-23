@@ -1,5 +1,5 @@
 # mongoose-to-csv
-MongooseToCsv is a mongoose plugin that creates a `CsvBuilder` instance for your Schema.
+MongooseToCsv is a mongoose plugin that creates a (`CsvBuilder`)[https://github.com/nickpisacane/csv-builder] instance for your Schema.
 
 ## Usage
 ```js
@@ -58,7 +58,7 @@ $ npm install mongoose-to-csv
 ## Testing
 Running tests requires a local mongodb server, and mocha. While most likely not a namespace issue, the test script will create a database `__mongoose_to_csv_test__`, and drop the database when finished. You have been warned.
 ```sh
-$ npm test 
+$ npm test
 ```
 
 ## API
@@ -70,7 +70,7 @@ The `virtuals` have nothing to do with mongoose virtuals.
 
 ### Schema.csvReadStream([docs])
 Creates a csv formated read stream from query results.
-* docs Array<Model> 
+* docs Array<Model>
 
 ### Schema.csvTransformStream()
 Transforms mongoose querystreams to csv formated streams.
@@ -80,4 +80,4 @@ Transforms mongoose querystreams to csv formated streams.
 This is just a convenience method for:
 ```js
 Schema.find(query).stream().pipe(Schema.csvTransformStream())
-``` 
+```
