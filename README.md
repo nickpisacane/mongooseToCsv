@@ -1,5 +1,5 @@
 # mongoose-to-csv
-MongooseToCsv is a mongoose plugin that creates a (`CsvBuilder`)[https://github.com/nickpisacane/csv-builder] instance for your Schema.
+MongooseToCsv is a mongoose plugin that creates a [`CsvBuilder`](https://github.com/nickpisacane/CsvBuilder) instance for your Schema.
 
 ## Usage
 ```js
