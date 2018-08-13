@@ -21,7 +21,7 @@
     "test": "mocha ./test/mongooseToCsv.spec.js"
   },
   "dependencies": {
-    "csv-builder": "0.0.4"
+    "csv-builder": "1.0.0"
   },
   "devDependencies": {
     "mocha": "^3.2.0",
