@@ -11,7 +11,7 @@ var CsvBuilder = require('csv-builder');
  * @param {String|Array} options.headers Space separated headers, or array of headers
  * @param {String} [options.delimiter = ','] Value delimiter for csv data
  * @param {String} [options.terminator = '\n'] Line terminator for csv data
- * @param {Object} options.constraints {"header": "prop"}
+ * @param {Object} options.alias{"header": "prop"}
  * @param {Object} options.virtuals Virtual properties.
  */
 
